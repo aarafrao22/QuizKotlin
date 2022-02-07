@@ -25,15 +25,13 @@ class AdapterSet(var context:Context, var sets:Int) : BaseAdapter() {
         return 0
     }
 
-    override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View? {
+    override fun getView(position: Int, convertView: View?, parent: ViewGroup): View? {
         val layoutInflater : LayoutInflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         val view : View = layoutInflater.inflate(R.layout.setitem,parent,false)
+        view.setOnClickListener { var intent:Intent(this,QuestionActivity) }
 
         val viewText: TextView = view.findViewById(R.id.textSet)
         viewText.text = (position+1).toString()
-        view.setOnClickListener {
-            val questionIntent: Intent(,Quest)
-        }
         return view
 
     }

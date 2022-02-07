@@ -1,6 +1,5 @@
 package com.aaraf.quizzzz
 
-import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -13,14 +12,12 @@ class setActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_set)
 
-        val context:Context
-
         toolbar.title = intent.getStringExtra("Title")
         val sets:Int = intent.getIntExtra("Sets",0)
 
         GridView.adapter = AdapterSet(this,sets)
         GridView.setOnItemClickListener { parent, view, position, id ->
-            val questionIntent: Intent(this,QuestionActivity::class.java)
+
         }
 
 
